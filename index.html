@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AUTONOVA — Electrónica Automotriz para Ella</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ───── NAVBAR ───── -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">AUTO<span>NOVA</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="tienda.html">Tienda</a>
+        <a href="#servicios">Instalación</a>
+        <a href="#nosotras">Nosotras</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#contacto" class="btn-nav">Agendar cita</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ───── HERO ───── -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Electrónica automotriz para ella</p>
+      <h1 class="hero-title">Innova con<br /><em>AutoNova.</em></h1>
+      <p class="hero-sub">Venta e instalación de electrónica automotriz pensada y ejecutada por y para mujeres. Sin tecnicismos innecesarios, con resultados que se notan.</p>
+      <div class="hero-cta">
+        <a href="#productos" class="btn-primary">Ver catálogo</a>
+        <a href="#servicios" class="btn-ghost">¿Cómo funciona?</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>2,400+</strong><span>clientas satisfechas</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>98%</strong><span>garantía de satisfacción</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>5★</strong><span>calificación promedio</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="car-card">
+        <div class="car-icon"><i class="fa-solid fa-car-side"></i></div>
+        <div class="car-card-text">
+          <p>Sistema de sonido instalado</p>
+          <span><i class="fa-solid fa-circle-check"></i> Verificado</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint"><i class="fa-solid fa-chevron-down"></i></div>
+  </section>
+
+  <!-- ───── CATEGORÍAS ───── -->
+  <section class="categories" id="productos">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Nuestro catálogo</p>
+        <h2>Encuentra lo que<br /><em>tu auto necesita</em></h2>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-card" data-category="audio">
+          <div class="cat-icon"><i class="fa-solid fa-volume-high"></i></div>
+          <h3>Audio & Sonido</h3>
+          <p>Cabeceras, amplificadores, subwoofers y sistemas de entretenimiento de alta calidad.</p>
+          <a href="tienda.html" class="cat-link">Explorar <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="cat-card featured" data-category="seguridad">
+          <div class="cat-badge">Más popular</div>
+          <div class="cat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Seguridad & GPS</h3>
+          <p>Alarmas inteligentes, rastreadores GPS y cámaras de reversa para tu tranquilidad.</p>
+          <a href="tienda.html" class="cat-link">Explorar <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="cat-card" data-category="luces">
+          <div class="cat-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <h3>Iluminación LED</h3>
+          <p>Faros LED, luces de ambiente interior y accesorios lumínicos que transforman tu auto.</p>
+          <a href="tienda.html" class="cat-link">Explorar <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="cat-card" data-category="conectividad">
+          <div class="cat-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <h3>Conectividad</h3>
+          <p>CarPlay, Android Auto, cargadores inalámbricos y pantallas inteligentes.</p>
+          <a href="tienda.html" class="cat-link">Explorar <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="cat-card" data-category="sensores">
+          <div class="cat-icon"><i class="fa-solid fa-radar"></i></div>
+          <h3>Sensores & Asistencia</h3>
+          <p>Sensores de estacionamiento, cámaras 360° y asistentes de conducción.</p>
+          <a href="tienda.html" class="cat-link">Explorar <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="cat-card" data-category="carga">
+          <div class="cat-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Carga & Eléctrico</h3>
+          <p>Inversores, cargadores rápidos y accesorios eléctricos para autos modernos.</p>
+          <a href="tienda.html" class="cat-link">Explorar <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── TEASER TIENDA ───── -->
+  <section class="shop-teaser" id="destacados">
+    <div class="container">
+      <div class="shop-teaser-inner">
+        <div class="shop-teaser-blobs">
+          <div class="st-blob st-blob-1"></div>
+          <div class="st-blob st-blob-2"></div>
+        </div>
+        <div class="shop-teaser-content">
+          <p class="eyebrow" style="color:#A84040">Lo más querido</p>
+          <h2>Nuestra tienda tiene<br /><em>todo lo que necesitas</em></h2>
+          <p>Más de 80 productos de audio, seguridad, GPS, conectividad e iluminación. Filtros fáciles, precios claros y asesoría incluida.</p>
+          <div class="st-pills">
+            <span><i class="fa-solid fa-volume-high"></i> Audio</span>
+            <span><i class="fa-solid fa-shield-halved"></i> Seguridad</span>
+            <span><i class="fa-solid fa-mobile-screen-button"></i> Conectividad</span>
+            <span><i class="fa-solid fa-lightbulb"></i> LED</span>
+            <span><i class="fa-solid fa-bolt"></i> Carga</span>
+          </div>
+          <a href="tienda.html" class="btn-primary" style="margin-top:2rem;display:inline-block">Ver toda la tienda <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="shop-teaser-cards">
+          <div class="st-mini-card">
+            <span><i class="fa-solid fa-display"></i></span>
+            <div><p>Pantalla Sony 9"</p><strong>$1,890,000</strong></div>
+          </div>
+          <div class="st-mini-card featured">
+            <span><i class="fa-solid fa-bell"></i></span>
+            <div><p>Alarma Viper</p><strong>$750,000</strong></div>
+          </div>
+          <div class="st-mini-card">
+            <span><i class="fa-solid fa-camera"></i></span>
+            <div><p>Cámara 360° Garmin</p><strong>$980,000</strong></div>
+          </div>
+          <div class="st-mini-card">
+            <span><i class="fa-solid fa-music"></i></span>
+            <div><p>Sistema JBL</p><strong>$2,450,000</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── SERVICIOS ───── -->
+  <section class="services" id="servicios">
+    <div class="container">
+      <div class="section-header light">
+        <p class="eyebrow">Instalación profesional</p>
+        <h2>Nosotras nos<br /><em>encargamos de todo</em></h2>
+      </div>
+      <div class="services-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h4>Agenda tu cita</h4>
+            <p>Elige fecha y hora en nuestro formulario. Sin esperas largas. Sin filas.</p>
+          </div>
+        </div>
+        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h4>Diagnóstico gratuito</h4>
+            <p>Nuestro equipo revisa tu auto y te explica en términos claros qué necesita.</p>
+          </div>
+        </div>
+        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h4>Instalación certificada</h4>
+            <p>Técnicas especializadas instalan tu equipo con garantía de 12 meses.</p>
+          </div>
+        </div>
+        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <h4>Soporte continuo</h4>
+            <p>Te asesoramos por WhatsApp o en tienda cuando lo necesites.</p>
+          </div>
+        </div>
+      </div>
+      <div class="services-cards">
+        <div class="service-card">
+          <span class="service-icon"><i class="fa-solid fa-wrench"></i></span>
+          <h4>Instalación básica</h4>
+          <p>Radio, bocinas y accesorios simples</p>
+          <strong>Desde $80,000</strong>
+        </div>
+        <div class="service-card highlight">
+          <span class="service-icon"><i class="fa-solid fa-star"></i></span>
+          <h4>Instalación premium</h4>
+          <p>Sistemas completos de audio, cámaras y GPS</p>
+          <strong>Desde $200,000</strong>
+        </div>
+        <div class="service-card">
+          <span class="service-icon"><i class="fa-solid fa-house"></i></span>
+          <h4>Servicio a domicilio</h4>
+          <p>Vamos donde tú estás</p>
+          <strong>Desde $150,000</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── TESTIMONIOS ───── -->
+  <section class="testimonials" id="nosotras">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Ellas ya lo vivieron</p>
+        <h2>Lo que dicen<br /><em>nuestras clientas</em></h2>
+      </div>
+      <div class="testimonials-track" id="testimonialsTrack">
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>"Llegué sin saber nada de electrónica y salí con mi carro transformado. Me explicaron todo con paciencia y el resultado es increíble. ¡Mi sistema de sonido suena espectacular!"</p>
+          <div class="t-author">
+            <div class="t-avatar">LA</div>
+            <div><strong>Laura A.</strong><span>Bogotá, Colombia</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>"Tenía miedo de que me fueran a cobrar de más por no saber del tema, pero el trato fue honesto y transparente. La cámara 360° cambió mi vida al parquear."</p>
+          <div class="t-author">
+            <div class="t-avatar">MR</div>
+            <div><strong>Marcela R.</strong><span>Medellín, Colombia</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>"La alarma con GPS me da una tranquilidad enorme. El servicio fue rápido, puntual y el personal es muy profesional. Ya recomendé a todas mis amigas."</p>
+          <div class="t-author">
+            <div class="t-avatar">VP</div>
+            <div><strong>Valentina P.</strong><span>Cali, Colombia</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>"Por fin un lugar donde no te hablan como si no supieras nada, pero tampoco te complican con tecnicismos. Instalaron el CarPlay en menos de 2 horas."</p>
+          <div class="t-author">
+            <div class="t-avatar">KG</div>
+            <div><strong>Katherin G.</strong><span>Barranquilla, Colombia</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="t-controls">
+        <button class="t-btn" id="tPrev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="t-btn" id="tNext"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── CONTACTO ───── -->
+  <section class="contact" id="contacto">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <p class="eyebrow">Estamos aquí</p>
+        <h2>Hablemos<br /><em>sin rodeos</em></h2>
+        <div class="contact-items">
+          <div class="contact-item">
+            <span><i class="fa-solid fa-location-dot"></i></span>
+            <div>
+              <strong>Talleres AUTONOVA</strong>
+              <p>Cra 15 #85-22, Cali, Colombia</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span><i class="fa-brands fa-whatsapp"></i></span>
+            <div>
+              <strong>WhatsApp directo</strong>
+              <p>+57 310 000 0000</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span><i class="fa-solid fa-clock"></i></span>
+            <div>
+              <strong>Horario de atención</strong>
+              <p>Lun – Sáb: 8am a 6pm</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm" novalidate>
+        <h3>Agenda tu cita</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" placeholder="+57 300 000 0000" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Correo electrónico</label>
+          <input type="email" placeholder="tucorreo@email.com" required />
+        </div>
+        <div class="form-group">
+          <label>¿Qué servicio necesitas?</label>
+          <select>
+            <option value="">Selecciona una opción</option>
+            <option>Instalación de audio</option>
+            <option>Cámara de reversa / 360°</option>
+            <option>Alarma y GPS</option>
+            <option>CarPlay / Android Auto</option>
+            <option>Iluminación LED</option>
+            <option>Diagnóstico general</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Mensaje (opcional)</label>
+          <textarea placeholder="Cuéntanos sobre tu auto y lo que necesitas…"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Enviar solicitud <i class="fa-solid fa-arrow-right"></i></button>
+        <div class="form-success" id="formSuccess">
+          <i class="fa-solid fa-circle-check"></i> ¡Listo! Te contactaremos pronto.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ───── FOOTER ───── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">AUTO<span>NOVA</span></a>
+        <p>Electrónica automotriz hecha con amor y conocimiento para cada mujer que conduce.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Productos</h5>
+          <a href="#">Audio & Sonido</a>
+          <a href="#">Seguridad & GPS</a>
+          <a href="#">Iluminación LED</a>
+          <a href="#">Conectividad</a>
+        </div>
+        <div class="footer-col">
+          <h5>Servicios</h5>
+          <a href="#">Instalación básica</a>
+          <a href="#">Instalación premium</a>
+          <a href="#">Servicio a domicilio</a>
+          <a href="#">Garantías</a>
+        </div>
+        <div class="footer-col">
+          <h5>Empresa</h5>
+          <a href="#">Sobre nosotras</a>
+          <a href="#">Blog</a>
+          <a href="#">Trabaja con nosotras</a>
+          <a href="#">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 AUTONOVA. Todos los derechos reservados.</p>
+      <p>Hecho con <i class="fa-solid fa-heart" style="color:#FE88BC"></i> por y para mujeres.</p>
+    </div>
+  </footer>
+
+  <div class="cart-toast" id="cartToast"></div>
+  <div class="cart-fab" id="cartFab">
+    <i class="fa-solid fa-cart-shopping"></i> <span id="cartCount">0</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

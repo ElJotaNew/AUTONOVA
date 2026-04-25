@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AUTONOVA — Tienda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="tienda.css" />
+</head>
+<body class="tienda-page">
+
+  <!-- ───── NAVBAR ───── -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">AUTO<span>NOVA</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html#productos">Categorías</a>
+        <a href="index.html#servicios">Instalación</a>
+        <a href="index.html#nosotras">Nosotras</a>
+        <a href="index.html#contacto">Contacto</a>
+        <a href="index.html#contacto" class="btn-nav">Agendar cita</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ───── HERO TIENDA ───── -->
+  <section class="store-hero">
+    <div class="store-hero-bg">
+      <div class="sh-blob sh-blob-1"></div>
+      <div class="sh-blob sh-blob-2"></div>
+    </div>
+    <div class="store-hero-content">
+      <p class="eyebrow">Nuestra tienda</p>
+      <h1>Encuentra tu<br /><em>equipo perfecto</em></h1>
+      <p>Más de 80 productos de las mejores marcas. Envío a todo Colombia. Instalación incluida si lo necesitas.</p>
+    </div>
+    <div class="store-hero-badges">
+      <div class="sh-badge"><i class="fa-solid fa-truck"></i> Envío gratis +$300k</div>
+      <div class="sh-badge"><i class="fa-solid fa-shield-halved"></i> Garantía 12 meses</div>
+      <div class="sh-badge"><i class="fa-solid fa-box"></i> Despacho 24–48 h</div>
+    </div>
+  </section>
+
+  <!-- ───── TIENDA PRINCIPAL ───── -->
+  <section class="store-main">
+    <div class="store-container">
+
+      <!-- SIDEBAR FILTROS -->
+      <aside class="store-sidebar">
+        <div class="filter-block">
+          <h4>Categorías</h4>
+          <label class="filter-check active" data-filter="todos">
+            <input type="radio" name="cat" value="todos" checked />
+            <i class="fa-solid fa-border-all"></i> Todos los productos
+          </label>
+          <label class="filter-check" data-filter="audio">
+            <input type="radio" name="cat" value="audio" />
+            <i class="fa-solid fa-volume-high"></i> Audio & Sonido
+          </label>
+          <label class="filter-check" data-filter="seguridad">
+            <input type="radio" name="cat" value="seguridad" />
+            <i class="fa-solid fa-shield-halved"></i> Seguridad & GPS
+          </label>
+          <label class="filter-check" data-filter="luces">
+            <input type="radio" name="cat" value="luces" />
+            <i class="fa-solid fa-lightbulb"></i> Iluminación LED
+          </label>
+          <label class="filter-check" data-filter="conectividad">
+            <input type="radio" name="cat" value="conectividad" />
+            <i class="fa-solid fa-mobile-screen-button"></i> Conectividad
+          </label>
+          <label class="filter-check" data-filter="sensores">
+            <input type="radio" name="cat" value="sensores" />
+            <i class="fa-solid fa-satellite-dish"></i> Sensores
+          </label>
+          <label class="filter-check" data-filter="carga">
+            <input type="radio" name="cat" value="carga" />
+            <i class="fa-solid fa-bolt"></i> Carga & Eléctrico
+          </label>
+        </div>
+
+        <div class="filter-block">
+          <h4>Precio</h4>
+          <label class="filter-check" data-price="all">
+            <input type="radio" name="precio" value="all" checked /> Todos
+          </label>
+          <label class="filter-check" data-price="low">
+            <input type="radio" name="precio" value="low" /> Hasta $500k
+          </label>
+          <label class="filter-check" data-price="mid">
+            <input type="radio" name="precio" value="mid" /> $500k – $1.5M
+          </label>
+          <label class="filter-check" data-price="high">
+            <input type="radio" name="precio" value="high" /> Más de $1.5M
+          </label>
+        </div>
+
+        <div class="filter-block">
+          <h4>Ordenar por</h4>
+          <select class="filter-select" id="sortSelect">
+            <option value="default">Destacados</option>
+            <option value="price-asc">Menor precio</option>
+            <option value="price-desc">Mayor precio</option>
+            <option value="rating">Mejor calificados</option>
+          </select>
+        </div>
+
+        <div class="filter-promo">
+          <i class="fa-solid fa-headset" style="font-size:1.4rem;color:#B8005A;margin-bottom:.5rem;display:block"></i>
+          <p>¿No sabes qué elegir?</p>
+          <a href="index.html#contacto" class="btn-primary" style="font-size:.82rem;padding:.65rem 1.2rem;">Pide asesoría gratis</a>
+        </div>
+      </aside>
+
+      <!-- GRID PRODUCTOS -->
+      <div class="store-content">
+
+        <!-- BARRA SUPERIOR -->
+        <div class="store-topbar">
+          <div class="search-wrap">
+            <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input type="text" id="searchInput" placeholder="Buscar producto…" class="search-input" />
+          </div>
+          <p class="results-count" id="resultsCount">Mostrando <strong>1</strong> producto</p>
+        </div>
+
+        <!-- PRODUCTOS GRID -->
+        <div class="products-grid" id="productsGrid">
+
+          <!-- PRODUCTO PRUEBA -->
+          <div class="product-card" data-category="audio" data-price="50000" data-rating="5"
+               data-id="prueba" data-name="Producto Prueba" data-unit="50000" data-icon="fa-solid fa-flask">
+            <div class="product-img">
+              <div class="product-icon-wrap"><i class="fa-solid fa-flask"></i></div>
+              <div class="product-tag">Prueba</div>
+            </div>
+            <div class="product-info">
+              <p class="product-brand">AUTONOVA</p>
+              <h4>Producto Prueba</h4>
+              <div class="product-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <span>(1)</span>
+              </div>
+              <div class="product-price">
+                <strong>$50,000</strong>
+              </div>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('prueba',-1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-value" id="qty-prueba">1</span>
+                <button class="qty-btn" onclick="changeQty('prueba',1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <button class="btn-add" onclick="addToCartFull('prueba')">
+                <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+        </div><!-- /products-grid -->
+
+        <!-- EMPTY STATE -->
+        <div class="empty-state" id="emptyState" style="display:none;">
+          <i class="fa-solid fa-magnifying-glass" style="font-size:2.5rem;color:#FFBEDE;margin-bottom:1rem;display:block"></i>
+          <h4>No encontramos productos</h4>
+          <p>Intenta con otra búsqueda o categoría.</p>
+        </div>
+
+      </div><!-- /store-content -->
+    </div><!-- /store-container -->
+  </section>
+
+  <!-- ───── BANNER INSTALACIÓN ───── -->
+  <section class="install-banner">
+    <div class="container install-inner">
+      <div>
+        <p class="eyebrow" style="color:var(--gold-light)">¿Ya elegiste tu equipo?</p>
+        <h2>Nosotras lo <em>instalamos</em> por ti</h2>
+        <p>Agenda tu cita de instalación y listo. Sin complicaciones.</p>
+      </div>
+      <a href="index.html#contacto" class="btn-primary">Agendar instalación <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- ───── FOOTER ───── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">AUTO<span>NOVA</span></a>
+        <p>Electrónica automotriz hecha con amor y conocimiento para cada mujer que conduce.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Productos</h5>
+          <a href="#">Audio & Sonido</a>
+          <a href="#">Seguridad & GPS</a>
+          <a href="#">Iluminación LED</a>
+          <a href="#">Conectividad</a>
+        </div>
+        <div class="footer-col">
+          <h5>Servicios</h5>
+          <a href="index.html#servicios">Instalación básica</a>
+          <a href="index.html#servicios">Instalación premium</a>
+          <a href="index.html#servicios">Servicio a domicilio</a>
+          <a href="index.html#servicios">Garantías</a>
+        </div>
+        <div class="footer-col">
+          <h5>Empresa</h5>
+          <a href="index.html#nosotras">Sobre nosotras</a>
+          <a href="#">Blog</a>
+          <a href="#">Trabaja con nosotras</a>
+          <a href="index.html#contacto">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 AUTONOVA. Todos los derechos reservados.</p>
+      <p>Hecho con <i class="fa-solid fa-heart" style="color:#FE88BC"></i> por y para mujeres.</p>
+    </div>
+  </footer>
+
+  <!-- ───── CART PANEL ───── -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-cart-shopping"></i> Tu carrito</h3>
+      <button class="cart-close" onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <p>Tu carrito está vacío</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-subtotal"><span>Subtotal</span><strong id="cartSubtotal">$0</strong></div>
+      <div class="cart-subtotal"><span>IVA (19%)</span><strong id="cartIva">$0</strong></div>
+      <div class="cart-total"><span>Total</span><strong id="cartTotal">$0</strong></div>
+      <button class="btn-checkout" onclick="openCheckout()">
+        Finalizar compra <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ───── MODAL CHECKOUT ───── -->
+  <div class="modal-overlay" id="checkoutOverlay">
+    <div class="modal-box" id="checkoutBox">
+      <button class="modal-close" onclick="closeCheckout()"><i class="fa-solid fa-xmark"></i></button>
+      <h3>Datos de compra</h3>
+      <p class="modal-sub">Completa tus datos para generar tu factura</p>
+      <div class="checkout-form" id="checkoutForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label><i class="fa-solid fa-user"></i> Nombre completo *</label>
+            <input type="text" id="cNombre" placeholder="Tu nombre" />
+          </div>
+          <div class="form-group">
+            <label><i class="fa-solid fa-id-card"></i> Cédula / NIT *</label>
+            <input type="text" id="cCedula" placeholder="123456789" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><i class="fa-solid fa-envelope"></i> Correo electrónico *</label>
+            <input type="email" id="cEmail" placeholder="correo@email.com" />
+          </div>
+          <div class="form-group">
+            <label><i class="fa-solid fa-phone"></i> Teléfono</label>
+            <input type="tel" id="cTel" placeholder="+57 300 000 0000" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label><i class="fa-solid fa-location-dot"></i> Dirección de envío *</label>
+          <input type="text" id="cDireccion" placeholder="Calle 00 # 00-00, Ciudad" />
+        </div>
+        <div class="form-group">
+          <label><i class="fa-solid fa-credit-card"></i> Método de pago</label>
+          <select id="cPago">
+            <option value="transferencia">Transferencia bancaria</option>
+            <option value="efectivo">Efectivo en tienda</option>
+            <option value="nequi">Nequi / Daviplata</option>
+            <option value="tarjeta">Tarjeta crédito/débito</option>
+          </select>
+        </div>
+        <div class="checkout-summary" id="checkoutSummary"></div>
+        <div class="checkout-actions">
+          <button class="btn-ghost" onclick="closeCheckout()">
+            <i class="fa-solid fa-arrow-left"></i> Volver
+          </button>
+          <button class="btn-primary" onclick="generarFactura()">
+            Generar factura <i class="fa-solid fa-check"></i>
+          </button>
+        </div>
+        <div class="form-error" id="checkoutError"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───── MODAL FACTURA ───── -->
+  <div class="modal-overlay" id="invoiceOverlay">
+    <div class="modal-box modal-invoice" id="invoiceBox">
+      <div class="invoice" id="invoiceContent"></div>
+      <div class="invoice-actions">
+        <button class="btn-ghost" onclick="closeInvoice()">
+          <i class="fa-solid fa-arrow-left"></i> Nueva compra
+        </button>
+        <button class="btn-primary" onclick="imprimirFactura()">
+          <i class="fa-solid fa-print"></i> Imprimir / Guardar PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───── CART TOAST & FAB ───── -->
+  <div class="cart-toast" id="cartToast"></div>
+  <div class="cart-fab" id="cartFab" onclick="openCart()">
+    <i class="fa-solid fa-cart-shopping"></i> <span id="cartCount">0</span>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="tienda.js"></script>
+</body>
+</html>
