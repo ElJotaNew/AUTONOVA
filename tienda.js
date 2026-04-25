@@ -12,6 +12,20 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCart();
 });
 
+/* ════════ INSTALL TOGGLE ════════ */
+const installSelected = {};   // { productId: true/false }
+
+function toggleInstall(id) {
+  installSelected[id] = !installSelected[id];
+  const btn  = document.getElementById('install-btn-' + id);
+  if (!btn) return;
+  if (installSelected[id]) {
+    btn.classList.add('active');
+  } else {
+    btn.classList.remove('active');
+  }
+}
+
 /* ════════ CANTIDAD EN TARJETA ════════ */
 function changeQty(id, delta) {
   const el = document.getElementById('qty-' + id);
@@ -25,13 +39,24 @@ function changeQty(id, delta) {
 function addToCartFull(id) {
   const card  = document.querySelector('[data-id="' + id + '"]');
   if (!card) return;
-  const name  = card.dataset.name;
-  const price = parseInt(card.dataset.unit);
-  const icon = card.dataset.icon;
-  const qty   = parseInt(document.getElementById('qty-' + id)?.textContent || 1);
-  if (cart[id]) { cart[id].qty += qty; } else { cart[id] = { name, price, qty, icon }; }
+  const name    = card.dataset.name;
+  const price   = parseInt(card.dataset.unit);
+  const install = parseInt(card.dataset.install || 0);
+  const icon    = card.dataset.icon;
+  const qty     = parseInt(document.getElementById('qty-' + id)?.textContent || 1);
+  const withInstall = !!installSelected[id];
+  const total   = price + (withInstall ? install : 0);
+
+  const cartKey = withInstall ? id + '-install' : id;
+  const label   = withInstall ? name + ' + Instalación' : name;
+
+  if (cart[cartKey]) {
+    cart[cartKey].qty += qty;
+  } else {
+    cart[cartKey] = { name: label, price: total, qty, icon, installPrice: withInstall ? install : 0 };
+  }
   renderCart();
-  showToast('🛒 ' + name + ' agregado');
+  showToast('🛒 ' + label + ' agregado');
   openCart();
 }
 
@@ -219,22 +244,72 @@ function showToast(msg) {
 }
 
 function initFilters() {
+  let activeCategory = 'todos';
+  let activePrice = 'all';
+
+  function applyFilters() {
+    const cards = document.querySelectorAll('.product-card');
+    let visible = 0;
+    cards.forEach(c => {
+      const cat   = c.dataset.category;
+      const price = parseInt(c.dataset.price);
+      const catOk = activeCategory === 'todos' || cat === activeCategory;
+      let priceOk = true;
+      if (activePrice === 'low')  priceOk = price <= 90000;
+      if (activePrice === 'mid')  priceOk = price > 90000 && price <= 200000;
+      if (activePrice === 'high') priceOk = price > 200000;
+      const show = catOk && priceOk;
+      c.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    updateCount(visible);
+    document.getElementById('emptyState').style.display = visible === 0 ? 'block' : 'none';
+  }
+
   document.querySelectorAll('[data-filter]').forEach(l => {
     l.addEventListener('click', () => {
       document.querySelectorAll('[data-filter]').forEach(x => x.classList.remove('active'));
       l.classList.add('active');
+      activeCategory = l.dataset.filter;
+      applyFilters();
     });
   });
+
+  document.querySelectorAll('[data-price]').forEach(l => {
+    l.addEventListener('click', () => {
+      activePrice = l.dataset.price;
+      applyFilters();
+    });
+  });
+
+  const sortEl = document.getElementById('sortSelect');
+  if (sortEl) {
+    sortEl.addEventListener('change', () => {
+      const grid  = document.getElementById('productsGrid');
+      const cards = [...grid.querySelectorAll('.product-card')];
+      if (sortEl.value === 'price-asc')  cards.sort((a,b) => parseInt(a.dataset.price) - parseInt(b.dataset.price));
+      if (sortEl.value === 'price-desc') cards.sort((a,b) => parseInt(b.dataset.price) - parseInt(a.dataset.price));
+      if (sortEl.value === 'rating')     cards.sort((a,b) => parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating));
+      cards.forEach(c => grid.appendChild(c));
+    });
+  }
+
+  applyFilters();
 }
 function initSearch() {
   const input = document.getElementById('searchInput');
   if (!input) return;
   input.addEventListener('input', () => {
     const q = input.value.toLowerCase();
+    let visible = 0;
     document.querySelectorAll('.product-card').forEach(c => {
       const txt = (c.querySelector('h4')?.textContent || '').toLowerCase();
-      c.style.display = txt.includes(q) ? '' : 'none';
+      const show = txt.includes(q);
+      c.style.display = show ? '' : 'none';
+      if (show) visible++;
     });
+    updateCount(visible);
+    document.getElementById('emptyState').style.display = visible === 0 ? 'block' : 'none';
   });
 }
 function updateCount(n) {

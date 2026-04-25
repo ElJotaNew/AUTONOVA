@@ -60,29 +60,29 @@
             <input type="radio" name="cat" value="todos" checked />
             <i class="fa-solid fa-border-all"></i> Todos los productos
           </label>
-          <label class="filter-check" data-filter="audio">
-            <input type="radio" name="cat" value="audio" />
-            <i class="fa-solid fa-volume-high"></i> Audio & Sonido
-          </label>
           <label class="filter-check" data-filter="seguridad">
             <input type="radio" name="cat" value="seguridad" />
-            <i class="fa-solid fa-shield-halved"></i> Seguridad & GPS
+            <i class="fa-solid fa-shield-halved"></i> Seguridad
+          </label>
+          <label class="filter-check" data-filter="camaras">
+            <input type="radio" name="cat" value="camaras" />
+            <i class="fa-solid fa-camera"></i> Cámaras
+          </label>
+          <label class="filter-check" data-filter="audio">
+            <input type="radio" name="cat" value="audio" />
+            <i class="fa-solid fa-volume-high"></i> Audio
           </label>
           <label class="filter-check" data-filter="luces">
             <input type="radio" name="cat" value="luces" />
             <i class="fa-solid fa-lightbulb"></i> Iluminación LED
           </label>
-          <label class="filter-check" data-filter="conectividad">
-            <input type="radio" name="cat" value="conectividad" />
-            <i class="fa-solid fa-mobile-screen-button"></i> Conectividad
-          </label>
           <label class="filter-check" data-filter="sensores">
             <input type="radio" name="cat" value="sensores" />
             <i class="fa-solid fa-satellite-dish"></i> Sensores
           </label>
-          <label class="filter-check" data-filter="carga">
-            <input type="radio" name="cat" value="carga" />
-            <i class="fa-solid fa-bolt"></i> Carga & Eléctrico
+          <label class="filter-check" data-filter="electrico">
+            <input type="radio" name="cat" value="electrico" />
+            <i class="fa-solid fa-bolt"></i> Eléctrico
           </label>
         </div>
 
@@ -92,13 +92,13 @@
             <input type="radio" name="precio" value="all" checked /> Todos
           </label>
           <label class="filter-check" data-price="low">
-            <input type="radio" name="precio" value="low" /> Hasta $500k
+            <input type="radio" name="precio" value="low" /> Hasta $90k
           </label>
           <label class="filter-check" data-price="mid">
-            <input type="radio" name="precio" value="mid" /> $500k – $1.5M
+            <input type="radio" name="precio" value="mid" /> $90k – $200k
           </label>
           <label class="filter-check" data-price="high">
-            <input type="radio" name="precio" value="high" /> Más de $1.5M
+            <input type="radio" name="precio" value="high" /> Más de $200k
           </label>
         </div>
 
@@ -134,30 +134,495 @@
         <!-- PRODUCTOS GRID -->
         <div class="products-grid" id="productsGrid">
 
-          <!-- PRODUCTO PRUEBA -->
-          <div class="product-card" data-category="audio" data-price="50000" data-rating="5"
-               data-id="prueba" data-name="Producto Prueba" data-unit="50000" data-icon="fa-solid fa-flask">
+        <!-- SENSOR DE REVERSA -->
+          <div class="product-card" data-category="sensores" data-price="70000" data-rating="5"
+               data-id="sensor-reversa" data-install="50000" data-name="Sensor de Reversa" data-unit="70000" data-icon="fa-solid fa-satellite-dish">
             <div class="product-img">
-              <div class="product-icon-wrap"><i class="fa-solid fa-flask"></i></div>
-              <div class="product-tag">Prueba</div>
+              <div class="product-icon-wrap"><i class="fa-solid fa-satellite-dish"></i></div>
+              <div class="product-tag">Sensores</div>
             </div>
             <div class="product-info">
               <p class="product-brand">AUTONOVA</p>
-              <h4>Producto Prueba</h4>
+              <h4>Sensor de Reversa</h4>
+              <p class="product-desc">Alerta sonora al detectar obstáculos al reversar. Instalación aprox. 1½ hora. </p>
               <div class="product-stars">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                <span>(1)</span>
+                <span>(12)</span>
+              </div>
+              <div class="product-price">
+                <strong>$70,000</strong>
+              </div>
+              <div class="install-toggle" id="install-wrap-sensor-reversa">
+                <button class="install-btn" id="install-btn-sensor-reversa" onclick="toggleInstall('sensor-reversa')">
+                  <span class="install-btn-icon"><i class="fa-solid fa-wrench"></i></span>
+                  <span class="install-btn-label">Incluir instalación</span>
+                  <span class="install-btn-price">+$50k</span>
+                  <span class="install-btn-check"><i class="fa-solid fa-check"></i></span>
+                </button>
+              </div>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('sensor-reversa',-1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-value" id="qty-sensor-reversa">1</span>
+                <button class="qty-btn" onclick="changeQty('sensor-reversa',1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <button class="btn-add" onclick="addToCartFull('sensor-reversa')">
+                <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+          <!-- KIT DE ALARMA -->
+          <div class="product-card" data-category="seguridad" data-price="106600" data-rating="5"
+               data-id="kit-alarma" data-install="80000" data-name="Kit de Alarma" data-unit="106600" data-icon="fa-solid fa-shield-halved">
+            <div class="product-img">
+              <div class="product-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+              <div class="product-tag tag-hot">Popular</div>
+            </div>
+            <div class="product-info">
+              <p class="product-brand">AUTONOVA</p>
+              <h4>Kit de Alarma</h4>
+              <p class="product-desc">Sistema completo de alarma con control remoto y sirena. Instalación premium aprox. 2½ horas. </p>
+              <div class="product-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <span>(28)</span>
+              </div>
+              <div class="product-price">
+                <strong>$106,600</strong>
+              </div>
+              <div class="install-toggle" id="install-wrap-kit-alarma">
+                <button class="install-btn" id="install-btn-kit-alarma" onclick="toggleInstall('kit-alarma')">
+                  <span class="install-btn-icon"><i class="fa-solid fa-wrench"></i></span>
+                  <span class="install-btn-label">Incluir instalación</span>
+                  <span class="install-btn-price">+$80k</span>
+                  <span class="install-btn-check"><i class="fa-solid fa-check"></i></span>
+                </button>
+              </div>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('kit-alarma',-1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-value" id="qty-kit-alarma">1</span>
+                <button class="qty-btn" onclick="changeQty('kit-alarma',1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <button class="btn-add" onclick="addToCartFull('kit-alarma')">
+                <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+          <!-- BATERÍA -->
+          <div class="product-card" data-category="electrico" data-price="260000" data-rating="4"
+               data-id="bateria" data-install="20000" data-name="Batería Automotriz" data-unit="260000" data-icon="fa-solid fa-car-battery">
+            <div class="product-img">
+              <div class="product-icon-wrap"><i class="fa-solid fa-car-battery"></i></div>
+              <div class="product-tag">Eléctrico</div>
+            </div>
+            <div class="product-info">
+              <p class="product-brand">AUTONOVA</p>
+              <h4>Batería Automotriz</h4>
+              <p class="product-desc">Batería de alto rendimiento. Cambio rápido de 10 a 20 minutos. </p>
+              <div class="product-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                <span>(19)</span>
+              </div>
+              <div class="product-price">
+                <strong>$260,000</strong>
+              </div>
+              <div class="install-toggle" id="install-wrap-bateria">
+                <button class="install-btn" id="install-btn-bateria" onclick="toggleInstall('bateria')">
+                  <span class="install-btn-icon"><i class="fa-solid fa-wrench"></i></span>
+                  <span class="install-btn-label">Incluir instalación</span>
+                  <span class="install-btn-price">+$20k</span>
+                  <span class="install-btn-check"><i class="fa-solid fa-check"></i></span>
+                </button>
+              </div>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('bateria',-1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-value" id="qty-bateria">1</span>
+                <button class="qty-btn" onclick="changeQty('bateria',1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <button class="btn-add" onclick="addToCartFull('bateria')">
+                <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+          <!-- LUCES LED -->
+          <div class="product-card" data-category="luces" data-price="50000" data-rating="5"
+               data-id="luces-led" data-install="30000" data-name="Luces LED" data-unit="50000" data-icon="fa-solid fa-lightbulb">
+            <div class="product-img">
+              <div class="product-icon-wrap"><i class="fa-solid fa-lightbulb"></i></div>
+              <div class="product-tag tag-promo">Oferta</div>
+            </div>
+            <div class="product-info">
+              <p class="product-brand">AUTONOVA</p>
+              <h4>Luces LED</h4>
+              <p class="product-desc">Iluminación LED de alta visibilidad. Instalación rápida de 20 a 30 minutos. </p>
+              <div class="product-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <span>(34)</span>
               </div>
               <div class="product-price">
                 <strong>$50,000</strong>
               </div>
-              <div class="qty-control">
-                <button class="qty-btn" onclick="changeQty('prueba',-1)"><i class="fa-solid fa-minus"></i></button>
-                <span class="qty-value" id="qty-prueba">1</span>
-                <button class="qty-btn" onclick="changeQty('prueba',1)"><i class="fa-solid fa-plus"></i></button>
+              <div class="install-toggle" id="install-wrap-luces-led">
+                <button class="install-btn" id="install-btn-luces-led" onclick="toggleInstall('luces-led')">
+                  <span class="install-btn-icon"><i class="fa-solid fa-wrench"></i></span>
+                  <span class="install-btn-label">Incluir instalación</span>
+                  <span class="install-btn-price">+$30k</span>
+                  <span class="install-btn-check"><i class="fa-solid fa-check"></i></span>
+                </button>
               </div>
-              <button class="btn-add" onclick="addToCartFull('prueba')">
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('luces-led',-1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-value" id="qty-luces-led">1</span>
+                <button class="qty-btn" onclick="changeQty('luces-led',1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <button class="btn-add" onclick="addToCartFull('luces-led')">
+                <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+          <!-- ALTERNADOR -->
+          <div class="product-card" data-category="electrico" data-price="310000" data-rating="5"
+               data-id="alternador" data-install="80000" data-name="Alternador" data-unit="310000" data-icon="fa-solid fa-rotate">
+            <div class="product-img">
+              <div class="product-icon-wrap"><i class="fa-solid fa-rotate"></i></div>
+              <div class="product-tag">Eléctrico</div>
+            </div>
+            <div class="product-info">
+              <p class="product-brand">AUTONOVA</p>
+              <h4>Alternador</h4>
+              <p class="product-desc">Alternador de repuesto de alta calidad. Instalación premium aprox. 2½ horas. </p>
+              <div class="product-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <span>(8)</span>
+              </div>
+              <div class="product-price">
+                <strong>$310,000</strong>
+              </div>
+              <div class="install-toggle" id="install-wrap-alternador">
+                <button class="install-btn" id="install-btn-alternador" onclick="toggleInstall('alternador')">
+                  <span class="install-btn-icon"><i class="fa-solid fa-wrench"></i></span>
+                  <span class="install-btn-label">Incluir instalación</span>
+                  <span class="install-btn-price">+$80k</span>
+                  <span class="install-btn-check"><i class="fa-solid fa-check"></i></span>
+                </button>
+              </div>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('alternador',-1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-value" id="qty-alternador">1</span>
+                <button class="qty-btn" onclick="changeQty('alternador',1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <button class="btn-add" onclick="addToCartFull('alternador')">
+                <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+          <!-- MOTOR DE ARRANQUE -->
+          <div class="product-card" data-category="electrico" data-price="290000" data-rating="4"
+               data-id="motor-arranque" data-install="80000" data-name="Motor de Arranque" data-unit="290000" data-icon="fa-solid fa-gear">
+            <div class="product-img">
+              <div class="product-icon-wrap"><i class="fa-solid fa-gear"></i></div>
+              <div class="product-tag">Eléctrico</div>
+            </div>
+            <div class="product-info">
+              <p class="product-brand">AUTONOVA</p>
+              <h4>Motor de Arranque</h4>
+              <p class="product-desc">Motor de arranque de repuesto para tu vehículo. Instalación premium aprox. 2½ horas. </p>
+              <div class="product-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                <span>(15)</span>
+              </div>
+              <div class="product-price">
+                <strong>$290,000</strong>
+              </div>
+              <div class="install-toggle" id="install-wrap-motor-arranque">
+                <button class="install-btn" id="install-btn-motor-arranque" onclick="toggleInstall('motor-arranque')">
+                  <span class="install-btn-icon"><i class="fa-solid fa-wrench"></i></span>
+                  <span class="install-btn-label">Incluir instalación</span>
+                  <span class="install-btn-price">+$80k</span>
+                  <span class="install-btn-check"><i class="fa-solid fa-check"></i></span>
+                </button>
+              </div>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('motor-arranque',-1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-value" id="qty-motor-arranque">1</span>
+                <button class="qty-btn" onclick="changeQty('motor-arranque',1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <button class="btn-add" onclick="addToCartFull('motor-arranque')">
+                <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+          <!-- CÁMARA DE REVERSA -->
+          <div class="product-card" data-category="camaras" data-price="90000" data-rating="5"
+               data-id="camara-reversa" data-install="50000" data-name="Cámara de Reversa" data-unit="90000" data-icon="fa-solid fa-camera">
+            <div class="product-img">
+              <div class="product-icon-wrap"><i class="fa-solid fa-camera"></i></div>
+              <div class="product-tag tag-hot">Popular</div>
+            </div>
+            <div class="product-info">
+              <p class="product-brand">AUTONOVA</p>
+              <h4>Cámara de Reversa</h4>
+              <p class="product-desc">Visión trasera clara al reversar. Instalación aprox. 1½ hora. </p>
+              <div class="product-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <span>(41)</span>
+              </div>
+              <div class="product-price">
+                <strong>$90,000</strong>
+              </div>
+              <div class="install-toggle" id="install-wrap-camara-reversa">
+                <button class="install-btn" id="install-btn-camara-reversa" onclick="toggleInstall('camara-reversa')">
+                  <span class="install-btn-icon"><i class="fa-solid fa-wrench"></i></span>
+                  <span class="install-btn-label">Incluir instalación</span>
+                  <span class="install-btn-price">+$50k</span>
+                  <span class="install-btn-check"><i class="fa-solid fa-check"></i></span>
+                </button>
+              </div>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('camara-reversa',-1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-value" id="qty-camara-reversa">1</span>
+                <button class="qty-btn" onclick="changeQty('camara-reversa',1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <button class="btn-add" onclick="addToCartFull('camara-reversa')">
+                <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+          <!-- RADIO / PANTALLA -->
+          <div class="product-card" data-category="audio" data-price="260000" data-rating="5"
+               data-id="radio-pantalla" data-install="50000" data-name="Radio / Pantalla" data-unit="260000" data-icon="fa-solid fa-display">
+            <div class="product-img">
+              <div class="product-icon-wrap"><i class="fa-solid fa-display"></i></div>
+              <div class="product-tag">Audio</div>
+            </div>
+            <div class="product-info">
+              <p class="product-brand">AUTONOVA</p>
+              <h4>Radio / Pantalla</h4>
+              <p class="product-desc">Pantalla táctil con Bluetooth y conectividad completa. Instalación aprox. 1½ hora. </p>
+              <div class="product-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <span>(27)</span>
+              </div>
+              <div class="product-price">
+                <strong>$260,000</strong>
+              </div>
+              <div class="install-toggle" id="install-wrap-radio-pantalla">
+                <button class="install-btn" id="install-btn-radio-pantalla" onclick="toggleInstall('radio-pantalla')">
+                  <span class="install-btn-icon"><i class="fa-solid fa-wrench"></i></span>
+                  <span class="install-btn-label">Incluir instalación</span>
+                  <span class="install-btn-price">+$50k</span>
+                  <span class="install-btn-check"><i class="fa-solid fa-check"></i></span>
+                </button>
+              </div>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('radio-pantalla',-1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-value" id="qty-radio-pantalla">1</span>
+                <button class="qty-btn" onclick="changeQty('radio-pantalla',1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <button class="btn-add" onclick="addToCartFull('radio-pantalla')">
+                <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+          <!-- PARLANTES -->
+          <div class="product-card" data-category="audio" data-price="130000" data-rating="4"
+               data-id="parlantes" data-install="50000" data-name="Parlantes" data-unit="130000" data-icon="fa-solid fa-volume-high">
+            <div class="product-img">
+              <div class="product-icon-wrap"><i class="fa-solid fa-volume-high"></i></div>
+              <div class="product-tag">Audio</div>
+            </div>
+            <div class="product-info">
+              <p class="product-brand">AUTONOVA</p>
+              <h4>Parlantes</h4>
+              <p class="product-desc">Parlantes de alta fidelidad para tu vehículo. Instalación aprox. 1½ hora. </p>
+              <div class="product-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                <span>(22)</span>
+              </div>
+              <div class="product-price">
+                <strong>$130,000</strong>
+              </div>
+              <div class="install-toggle" id="install-wrap-parlantes">
+                <button class="install-btn" id="install-btn-parlantes" onclick="toggleInstall('parlantes')">
+                  <span class="install-btn-icon"><i class="fa-solid fa-wrench"></i></span>
+                  <span class="install-btn-label">Incluir instalación</span>
+                  <span class="install-btn-price">+$50k</span>
+                  <span class="install-btn-check"><i class="fa-solid fa-check"></i></span>
+                </button>
+              </div>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('parlantes',-1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-value" id="qty-parlantes">1</span>
+                <button class="qty-btn" onclick="changeQty('parlantes',1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <button class="btn-add" onclick="addToCartFull('parlantes')">
+                <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+          <!-- ALARMA (nuevo) -->
+          <div class="product-card" data-category="seguridad" data-price="120000" data-rating="5"
+               data-id="alarma" data-install="80000" data-name="Alarma" data-unit="120000" data-icon="fa-solid fa-bell">
+            <div class="product-img">
+              <div class="product-icon-wrap"><i class="fa-solid fa-bell"></i></div>
+              <div class="product-tag tag-hot">Popular</div>
+            </div>
+            <div class="product-info">
+              <p class="product-brand">AUTONOVA</p>
+              <h4>Alarma</h4>
+              <p class="product-desc">Sistema de alarma con control remoto y sirena. Instalación aprox. 2–2½ horas. </p>
+              <div class="product-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <span>(33)</span>
+              </div>
+              <div class="product-price">
+                <strong>$120,000</strong>
+              </div>
+              <div class="install-toggle" id="install-wrap-alarma">
+                <button class="install-btn" id="install-btn-alarma" onclick="toggleInstall('alarma')">
+                  <span class="install-btn-icon"><i class="fa-solid fa-wrench"></i></span>
+                  <span class="install-btn-label">Incluir instalación</span>
+                  <span class="install-btn-price">+$80k</span>
+                  <span class="install-btn-check"><i class="fa-solid fa-check"></i></span>
+                </button>
+              </div>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('alarma',-1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-value" id="qty-alarma">1</span>
+                <button class="qty-btn" onclick="changeQty('alarma',1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <button class="btn-add" onclick="addToCartFull('alarma')">
+                <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+          <!-- CARGADOR USB -->
+          <div class="product-card" data-category="electrico" data-price="35000" data-rating="4"
+               data-id="cargador-usb" data-install="20000" data-name="Cargador USB" data-unit="35000" data-icon="fa-solid fa-plug">
+            <div class="product-img">
+              <div class="product-icon-wrap"><i class="fa-solid fa-plug"></i></div>
+              <div class="product-tag tag-promo">Oferta</div>
+            </div>
+            <div class="product-info">
+              <p class="product-brand">AUTONOVA</p>
+              <h4>Cargador USB</h4>
+              <p class="product-desc">Cargador USB integrado al tablero. Instalación rápida aprox. 1 hora. </p>
+              <div class="product-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                <span>(18)</span>
+              </div>
+              <div class="product-price">
+                <strong>$35,000</strong>
+              </div>
+              <div class="install-toggle" id="install-wrap-cargador-usb">
+                <button class="install-btn" id="install-btn-cargador-usb" onclick="toggleInstall('cargador-usb')">
+                  <span class="install-btn-icon"><i class="fa-solid fa-wrench"></i></span>
+                  <span class="install-btn-label">Incluir instalación</span>
+                  <span class="install-btn-price">+$20k</span>
+                  <span class="install-btn-check"><i class="fa-solid fa-check"></i></span>
+                </button>
+              </div>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('cargador-usb',-1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-value" id="qty-cargador-usb">1</span>
+                <button class="qty-btn" onclick="changeQty('cargador-usb',1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <button class="btn-add" onclick="addToCartFull('cargador-usb')">
+                <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+          <!-- LUCES AMBIENTE INTERIOR -->
+          <div class="product-card" data-category="luces" data-price="50000" data-rating="5"
+               data-id="luces-ambiente" data-install="50000" data-name="Luces Ambiente Interior" data-unit="50000" data-icon="fa-solid fa-wand-sparkles">
+            <div class="product-img">
+              <div class="product-icon-wrap"><i class="fa-solid fa-wand-sparkles"></i></div>
+              <div class="product-tag">LED</div>
+            </div>
+            <div class="product-info">
+              <p class="product-brand">AUTONOVA</p>
+              <h4>Luces Ambiente Interior</h4>
+              <p class="product-desc">Tiras LED de ambiente para el interior de tu auto. Instalación aprox. 1½ hora. </p>
+              <div class="product-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <span>(29)</span>
+              </div>
+              <div class="product-price">
+                <strong>$50,000</strong>
+              </div>
+              <div class="install-toggle" id="install-wrap-luces-ambiente">
+                <button class="install-btn" id="install-btn-luces-ambiente" onclick="toggleInstall('luces-ambiente')">
+                  <span class="install-btn-icon"><i class="fa-solid fa-wrench"></i></span>
+                  <span class="install-btn-label">Incluir instalación</span>
+                  <span class="install-btn-price">+$50k</span>
+                  <span class="install-btn-check"><i class="fa-solid fa-check"></i></span>
+                </button>
+              </div>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('luces-ambiente',-1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-value" id="qty-luces-ambiente">1</span>
+                <button class="qty-btn" onclick="changeQty('luces-ambiente',1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <button class="btn-add" onclick="addToCartFull('luces-ambiente')">
+                <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+              </button>
+            </div>
+          </div>
+
+          <!-- DASHCAM -->
+          <div class="product-card" data-category="camaras" data-price="130000" data-rating="5"
+               data-id="dashcam" data-install="50000" data-name="Dashcam" data-unit="130000" data-icon="fa-solid fa-video">
+            <div class="product-img">
+              <div class="product-icon-wrap"><i class="fa-solid fa-video"></i></div>
+              <div class="product-tag">Cámaras</div>
+            </div>
+            <div class="product-info">
+              <p class="product-brand">AUTONOVA</p>
+              <h4>Dashcam</h4>
+              <p class="product-desc">Cámara de conducción con grabación continua en HD. Instalación aprox. 1½ hora. </p>
+              <div class="product-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <span>(16)</span>
+              </div>
+              <div class="product-price">
+                <strong>$130,000</strong>
+              </div>
+              <div class="install-toggle" id="install-wrap-dashcam">
+                <button class="install-btn" id="install-btn-dashcam" onclick="toggleInstall('dashcam')">
+                  <span class="install-btn-icon"><i class="fa-solid fa-wrench"></i></span>
+                  <span class="install-btn-label">Incluir instalación</span>
+                  <span class="install-btn-price">+$50k</span>
+                  <span class="install-btn-check"><i class="fa-solid fa-check"></i></span>
+                </button>
+              </div>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('dashcam',-1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-value" id="qty-dashcam">1</span>
+                <button class="qty-btn" onclick="changeQty('dashcam',1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <button class="btn-add" onclick="addToCartFull('dashcam')">
                 <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
               </button>
             </div>
@@ -182,7 +647,8 @@
       <div>
         <p class="eyebrow" style="color:var(--gold-light)">¿Ya elegiste tu equipo?</p>
         <h2>Nosotras lo <em>instalamos</em> por ti</h2>
-        <p>Agenda tu cita de instalación y listo. Sin complicaciones.</p>
+        <p><strong style="color:rgba(255,255,255,.8)">Instalación básica desde $20,000</strong> — baterías y luces LED, rápido y sin drama.</p>
+        <p style="margin-top:.4rem"><strong style="color:rgba(255,255,255,.8)">Instalación premium desde $70,000</strong> — sistemas completos de sensores y alarmas.</p>
       </div>
       <a href="index.html#contacto" class="btn-primary">Agendar instalación <i class="fa-solid fa-arrow-right"></i></a>
     </div>
@@ -204,10 +670,10 @@
       <div class="footer-links">
         <div class="footer-col">
           <h5>Productos</h5>
-          <a href="#">Audio & Sonido</a>
           <a href="#">Seguridad & GPS</a>
           <a href="#">Iluminación LED</a>
-          <a href="#">Conectividad</a>
+          <a href="#">Sensores</a>
+          <a href="#">Eléctrico</a>
         </div>
         <div class="footer-col">
           <h5>Servicios</h5>
